@@ -18,6 +18,9 @@
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236E2B27'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23F3E2CE' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 
+<!-- главное фото грузим в первую очередь: ускоряет LCP -->
+<link rel="preload" as="image" href="assets/hero-portrait.jpg" fetchpriority="high">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -108,7 +111,7 @@
 
     <div class="hero-visual reveal">
       <div class="hero-photo">
-        <img src="assets/hero-portrait.jpg" width="1000" height="1500"
+        <img src="assets/hero-portrait.jpg" width="1000" height="1500" fetchpriority="high"
              alt="Айгерим Серикова, бизнес-коуч ICF, в светлом интерьере" loading="eager" decoding="async">
       </div>
       <div class="float-card float-card--1">

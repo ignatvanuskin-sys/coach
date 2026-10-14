@@ -165,7 +165,19 @@
     });
   }
 
-  /* ---------- 7. Год в подвале ---------- */
+  /* ---------- 7. Плавающая кнопка WhatsApp уходит, пока видна форма ---------- */
+  var waFloat = document.querySelector('.wa-float');
+  var bookSection = document.getElementById('book');
+  if (waFloat && bookSection && 'IntersectionObserver' in window) {
+    var bookObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        waFloat.classList.toggle('is-hidden', entry.isIntersecting);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -18% 0px' });
+    bookObserver.observe(bookSection);
+  }
+
+  /* ---------- 8. Год в подвале ---------- */
   var yearHolder = document.querySelector('[data-year]');
   if (yearHolder) yearHolder.textContent = new Date().getFullYear();
 })();
