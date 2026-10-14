@@ -22,6 +22,7 @@ assets/
   about-portrait-560.webp        — облегчённая версия для телефонов
   og-image.jpg                   — превью ссылки в соцсетях и мессенджерах (1200×630)
   favicon-32.png · apple-touch-icon.png · icon-192.png · icon-512.png
+  fonts/                         — шрифты Cormorant Garamond и Manrope (woff2) + fonts.css
 favicon.ico          — иконка сайта в корне (её ищут браузеры и сервисы сами)
 tools/
   validate.py        — проверка структуры, файлов и связок JS ↔ HTML
@@ -53,6 +54,7 @@ qa/                  — скрипты аудита и скриншоты (в �
 - **SEO:** `title` и `description`, canonical, Open Graph и Twitter-карточка с превью `assets/og-image.jpg`, микроразметка schema.org (`ProfessionalService` с тремя предложениями и ценами + `FAQPage`), `robots.txt` и `sitemap.xml`.
 - **Иконки:** `favicon.ico`, PNG 32×32, `apple-touch-icon.png` и иконки 192/512 для установки сайта на домашний экран (`manifest.webmanifest`).
 - **Производительность:** hero-фото в WebP (46 КБ вместо 124 КБ) с `srcset` под мобильный, `preload` + `fetchpriority="high"` для главного изображения, ленивая загрузка второго фото, один CSS и один JS-файл без библиотек.
+- **Шрифты лежат на своём домене** (`assets/fonts/`), ни одного запроса к Google Fonts: быстрее соединение, полный контроль кэша и никаких сторонних запросов с IP посетителя — это согласуется с текстом политики. Забрать шрифты заново или при смене набора: `python tools/fetch_fonts.py`.
 - **Безопасность и кэш:** `vercel.json` — заголовки `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy` и кэш ассетов на 7 дней.
 - **Юридическое:** страница `privacy.html` с политикой обработки данных, ссылки на неё из формы и подвала, страница 404.
 - **Доступность:** контраст мелких подписей ≥5:1, зоны нажатия ≥43px, фокус-обводки, закрытое мобильное меню вне табуляции, поддержка `prefers-reduced-motion`.

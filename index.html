@@ -36,9 +36,9 @@
       imagesrcset="assets/hero-portrait-640.webp 640w, assets/hero-portrait.webp 1000w"
       imagesizes="(max-width: 960px) 88vw, 42vw" fetchpriority="high">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- шрифты лежат локально: ни одного запроса к сторонним доменам -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/cormorant-garamond-500-normal-cyrillic.woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="styles.css">
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 
@@ -639,7 +639,7 @@
 
       <button class="btn btn-primary btn-full" type="submit">Записаться на консультацию</button>
       <p class="form-hint" id="formHint" role="status">Нажимая кнопку, ты соглашаешься с <a href="privacy.html">политикой обработки данных</a>.</p>
-      <p class="form-alt">Удобнее написать самой? <a href="https://t.me/aigerim_coach" target="_blank" rel="noopener" data-contact="telegram">Telegram</a> · <a href="https://wa.me/77771234567" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:hello@aigerim.coach">hello@aigerim.coach</a></p>
+      <p class="form-alt">Удобнее написать самой? <a href="https://t.me/aigerim_coach" target="_blank" rel="noopener" data-contact="telegram">Telegram</a> · <a href="https://wa.me/77771234567" target="_blank" rel="noopener">WhatsApp</a></p>
     </form>
   </div>
 </section>
