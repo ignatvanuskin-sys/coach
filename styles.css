@@ -162,7 +162,7 @@ p,li,blockquote p,summary h3,.card-goal,.step-out{text-wrap:pretty}
   display:grid;place-items:center;
   border-radius:13px;
   background:var(--wine);color:#F6E3CE;
-  font-family:var(--ff-display);font-size:1.5rem;line-height:1;
+  font-family:var(--ff-display);font-weight:500;font-size:1.5rem;line-height:1;
 }
 .brand-text{display:flex;flex-direction:column;line-height:1.25}
 .brand-text b{font-size:1rem;font-weight:700;letter-spacing:-.005em}
@@ -170,7 +170,7 @@ p,li,blockquote p,summary h3,.card-goal,.step-out{text-wrap:pretty}
 
 .nav{display:flex;align-items:center;gap:clamp(14px,1.5vw,26px)}
 .nav a{
-  font-size:.96rem;font-weight:500;color:var(--ink-soft);
+  font-size:.96rem;font-weight:400;color:var(--ink-soft);
   position:relative;padding:4px 0;
   transition:color .2s ease;
 }
@@ -266,7 +266,7 @@ p,li,blockquote p,summary h3,.card-goal,.step-out{text-wrap:pretty}
 }
 .float-card--1{left:-6%;bottom:16%;max-width:230px}
 .float-num{
-  display:block;font-family:var(--ff-display);font-size:2.7rem;line-height:1;
+  display:block;font-family:var(--ff-display);font-weight:500;font-size:2.7rem;line-height:1;
   color:var(--wine);margin-bottom:8px;
 }
 .float-label{font-size:.92rem;line-height:1.45;color:var(--muted)}
@@ -449,6 +449,7 @@ section[id]{scroll-margin-top:96px}
 .section--tint .quote{background:var(--cream-2)}
 .quote p{
   font-family:var(--ff-display);
+  font-weight:500;
   font-size:clamp(1.18rem,1.35vw,1.38rem);
   line-height:1.45;
   color:var(--ink);

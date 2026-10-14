@@ -12,10 +12,12 @@ import urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(ROOT, "assets", "fonts")
 
+# только те начертания, которые реально используются в вёрстке
+# (Cormorant: 500 — заголовки, 600 — h3; Manrope: 400 — текст, 600 — акценты, 700 — жирный)
 CSS_URL = (
     "https://fonts.googleapis.com/css2"
-    "?family=Cormorant+Garamond:wght@400;500;600"
-    "&family=Manrope:wght@400;500;600;700"
+    "?family=Cormorant+Garamond:wght@500;600"
+    "&family=Manrope:wght@400;600;700"
     "&display=swap"
 )
 UA = (
