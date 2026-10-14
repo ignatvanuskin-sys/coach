@@ -171,9 +171,19 @@
     });
   }
 
-  /* ---------- 7. Плавающая кнопка WhatsApp уходит, пока видна форма ---------- */
+  /* ---------- 7. Плавающая кнопка WhatsApp ---------- */
   var waFloat = document.querySelector('.wa-float');
   var bookSection = document.getElementById('book');
+
+  // показываем только после первого экрана — чтобы не перекрывать фото и заголовок
+  if (waFloat) {
+    var toggleFloat = function () {
+      waFloat.classList.toggle('is-ready', window.scrollY > window.innerHeight * 0.75);
+    };
+    toggleFloat();
+    window.addEventListener('scroll', toggleFloat, { passive: true });
+  }
+
   if (waFloat && bookSection && 'IntersectionObserver' in window) {
     var bookObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
