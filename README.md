@@ -21,7 +21,8 @@ assets/
   about-portrait.jpg / .webp     — фото в секции «Обо мне» (900×1350)
   about-portrait-560.webp        — облегчённая версия для телефонов
   og-image.jpg                   — превью ссылки в соцсетях и мессенджерах (1200×630)
-  favicon.ico · favicon-32.png · apple-touch-icon.png · icon-192.png · icon-512.png
+  favicon-32.png · apple-touch-icon.png · icon-192.png · icon-512.png
+favicon.ico          — иконка сайта в корне (её ищут браузеры и сервисы сами)
 tools/
   validate.py        — проверка структуры, файлов и связок JS ↔ HTML
   make_assets.py     — пересборка иконок, OG-картинки и WebP из исходных фото
