@@ -827,11 +827,17 @@ section[id]{scroll-margin-top:96px}
 @media (max-width:660px){
   :root{--sec-y:46px}
 
-  /* --- hero --- */
-  h1{font-size:clamp(2.05rem,9.6vw,2.6rem);line-height:1.1;letter-spacing:-.01em}
-  .hero{padding-top:26px}
-  .hero-actions{margin:24px 0 26px;gap:10px}
-  .hero-photo{border-radius:var(--radius-lg) var(--radius-lg) 72px 72px}
+  /* --- hero: сверху сразу человек, ниже оффер и кнопка --- */
+  .hero{padding-top:14px}
+  .hero-grid{gap:16px}
+  .hero-visual{order:-1;max-width:100%;width:100%}
+  .hero-photo{border-radius:var(--radius-lg) var(--radius-lg) 96px 96px}
+  /* кадр квадратный и по верху: человек виден сразу, без обрезки головы */
+  .hero-photo img{aspect-ratio:1/1;object-position:58% top}
+  .float-card--1{display:none}
+  .hero-copy .eyebrow{margin-bottom:10px}
+  h1{font-size:clamp(2.05rem,9.6vw,2.6rem);line-height:1.1;letter-spacing:-.01em;margin-bottom:.3em}
+  .hero-actions{margin:18px 0 22px;gap:10px}
   .proof{gap:12px;align-items:flex-start}
   .proof-faces span{width:42px;height:42px}
   .stat-strip{margin-top:32px;padding-top:22px;row-gap:18px}
