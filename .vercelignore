@@ -1,0 +1,7 @@
+# служебные файлы: не нужны на продакшене
+tools/
+qa/
+media-output/
+image_generate/
+.git/
+.vercelignore

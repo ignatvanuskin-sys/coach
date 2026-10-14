@@ -90,7 +90,7 @@
   var WHATSAPP_PHONE = '77771234567'; // ← замените на свой номер без «+»
   var form = document.getElementById('bookForm');
   var hint = document.getElementById('formHint');
-  var defaultHint = hint ? hint.textContent : '';
+  var defaultHint = hint ? hint.innerHTML : '';
 
   function buildMessage() {
     var name = (document.getElementById('fName').value || '').trim();
@@ -132,11 +132,17 @@
         return;
       }
 
-      var url = 'https://wa.me/' + WHATSAPP_PHONE + '?text=' + encodeURIComponent(buildMessage());
-      window.open(url, '_blank', 'noopener');
+      var text = buildMessage();
+      window.open('https://wa.me/' + WHATSAPP_PHONE + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+
+      // текст заявки дублируем в буфер: если WhatsApp не открылся, его можно вставить в Telegram или письмо
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).catch(function () {});
+      }
 
       if (hint) {
-        hint.textContent = 'Готово! Открываю WhatsApp с готовым сообщением. Если окно не открылось — напиши в Telegram: @aigerim_coach';
+        hint.innerHTML = 'Открываю WhatsApp с готовым текстом. Заявка также скопирована в буфер — её можно вставить в ' +
+          '<a href="https://t.me/aigerim_coach" target="_blank" rel="noopener">Telegram</a> или письмо на hello@aigerim.coach.';
         hint.classList.add('is-ok');
       }
       form.reset();
@@ -160,7 +166,7 @@
       if (e.target.matches('input,textarea')) markError(e.target, false);
       if (hint && hint.classList.contains('is-ok')) {
         hint.classList.remove('is-ok');
-        hint.textContent = defaultHint;
+        hint.innerHTML = defaultHint;
       }
     });
   }

@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /media-output/
 Disallow: /tools/
+Disallow: /qa/
 
-Sitemap: https://aigerim-coach.kz/sitemap.xml
+Sitemap: https://coach-five-flax.vercel.app/sitemap.xml
