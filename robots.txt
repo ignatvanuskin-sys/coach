@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /media-output/
+Disallow: /tools/
+
+Sitemap: https://aigerim-coach.kz/sitemap.xml
